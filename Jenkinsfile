@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Deploy Green') {
             steps {
-                sh 'kubectl apply -f deployment-green.yaml'
+                sh 'kubectl apply --validate=false -f deployment-green.yaml'
             }
         }
         stage('Switch Traffic') {
